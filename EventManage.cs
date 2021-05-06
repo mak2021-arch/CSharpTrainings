@@ -12,7 +12,15 @@ namespace C_
             Console.WriteLine("Welcome to MAK Organisers!");
             Console.WriteLine("Please select the type of event");
             Console.WriteLine("1. Birthday \n2. Marriage \n3. Anniversary \n4. Engagement \n5. Reception");
-            int eventChoice= Convert.ToInt32(Console.ReadLine());
+            int eventChoice;
+            string input= Console.ReadLine();
+            try {
+                eventChoice = Convert.ToInt32(input);
+            }
+            catch (Exception) {
+                Console.WriteLine("---------------- \nERROR!\n---------------- \nPlease input from selected choices!");
+                goto Manage;
+            }
 
             switch (eventChoice)
             {
@@ -72,7 +80,7 @@ namespace C_
                  break;
                  
                    default:
-                   Console.WriteLine("Select a Valid Input. Try Again\n");
+                   Console.WriteLine("---------------- \nERROR!\n---------------- \nPlease input from selected choices!");
                    goto Manage;
                 
             }
@@ -140,9 +148,19 @@ namespace C_
         }
         public void MyCatering()
         {
+            Catering:
             Console.WriteLine("Please Select the Catering Option: \n1.'Classic'  --Rs. 200 per plate\n2. 'Regular' --Rs. 400 per plate\n3. 'Exquisite' --Rs. 600 per person\n ");
-            int cateringSelection = Convert.ToInt32(Console.ReadLine());
+            int cateringSelection;
             int cc1;
+            string input= Console.ReadLine();
+            try {
+                cateringSelection = Convert.ToInt32(input);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("---------------- \nERROR!\n---------------- \nPlease input from selected choices!");
+            goto Catering;
+            }
             switch (cateringSelection)
             {
                 case 1:
@@ -162,6 +180,10 @@ namespace C_
                 cc1 = 600*Guest; 
                 Console.WriteLine("The Catering cost for " +Guest+ " people will be: Rs." +cc1 );
                 break;
+
+                default:
+                   Console.WriteLine("---------------- \nERROR!\n---------------- \nPlease input from selected choices!");
+                   goto Catering ;
             }
 
         }
@@ -198,18 +220,7 @@ namespace C_
             Console.WriteLine("Choose the Shift \n1. 'Morning' --Rs. 2000 \n2. 'Evening'  --Rs. 4000\n3. 'Night' --Rs.6000\n");
             int shiftType = Convert.ToInt32(Console.ReadLine());
             var obj = new Var();
-          /*  switch (shiftType)
-            {
-                case 1:
-                Shift = "Morning";
-                break;
-                case 2:
-                Shift = "Evening";
-                break;
-                case 3:
-                Shift = "Night";
-                break;     
-            }*/
+
             switch (shiftType)
             {
                 case 1:
@@ -241,22 +252,7 @@ namespace C_
             Venue:
             Console.WriteLine("Select the Venue: \n1. Beach Side \n2. Open Garden \n3. Banquet Hall \n4. Paradise Pent House\n");
             int venueType = Convert.ToInt32(Console.ReadLine());
-            /*switch (venueType)
-            {
-                case 1:
-                Venue = "Beach side";
-                 break;
-                case 2:
-                Venue = "Open Garden";
-                 break;
-                case 3:
-                Venue = "Banquet Hall";
-                 break;
-                case 4:
-                Venue = "Paradise Pent House";
-                 break;
-                }
-            Var obj = new Var();*/
+            
             switch (venueType)
             {
                 case 1:
