@@ -9,6 +9,7 @@ namespace C_
         {
             Manage:
             Var v = new Var();
+            UserSelection u = new UserSelection();
             Console.WriteLine("Welcome to MAK Organisers!");
             Console.WriteLine("Please select the type of event");
             Console.WriteLine("1. Birthday \n2. Marriage \n3. Anniversary \n4. Engagement \n5. Reception");
@@ -31,7 +32,8 @@ namespace C_
                 v.MyDecor();
                 v.MyShift();
                 v.MyDate();
-                v.MyVenue();
+                u.selectedVenue();
+                //v.MyVenue();
                 v.Confirmation();
                  break;
 
@@ -289,6 +291,41 @@ namespace C_
         }
 
     }
+
+
+    abstract class Venue{
+public abstract void selectedVenue();
+    }
+    
+    class UserSelection : Venue{
+        public override void selectedVenue()
+        {
+           Venue:
+            Console.WriteLine("Select the Venue: \n1. Beach Side \n2. Open Garden \n3. Banquet Hall \n4. Paradise Pent House\n");
+            int venueType = Convert.ToInt32(Console.ReadLine());
+            
+            switch (venueType)
+            {
+                case 1:
+                Console.WriteLine("You have selected 'Beach Side' venue ");
+                
+                break;
+                case 2:
+                Console.WriteLine("You have selected 'Open Garden' venue");
+                break;
+                case 3:
+                Console.WriteLine("You have selected 'Banquet Hall' venue");
+                break;
+                case 4:
+                Console.WriteLine("You have selected 'Paradise Pent House' venue");
+                break;
+                default:
+                Console.WriteLine("Enter a Valid Input. Try Again");
+                goto Venue;
+            }
+        }
+    }
 }
+    
 
 
