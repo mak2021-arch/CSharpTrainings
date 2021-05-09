@@ -27,17 +27,29 @@ class Program
                 }
                 List <int> intlist = new List<int>();
                 List <int> freqlist= new List<int>();
+               /* Elements:
                 Console.WriteLine("Enter the elements:");
-                
+                string num3;
+                for (int i=0;i<num2;i++){
+                     num3 = Console.ReadLine();
+                     int num4;
+                     try{
+                      num4=Convert.ToInt32(num3); 
+                      intlist.Add(num4);
+                      freqlist.Add(-1);
+                     }
+                      catch (Exception) {
+                    Console.WriteLine("Enter Numbers Only");
+                    num2 -=1;
+                    goto Elements;
+                }
+                     
+                }*/
+                Console.WriteLine("\nEnter the elements:");
                 for (int i=0;i<num2;i++)
                 {
-                    try{
                     intlist.Add(Convert.ToInt32(Console.ReadLine()));
                     freqlist.Add(-1);
-                }
-                catch{
-                    Console.WriteLine("Enter Numbers Only");
-                }
                 }
                   Console.WriteLine("\nOriginal List: ");
                 foreach(int i in intlist)
