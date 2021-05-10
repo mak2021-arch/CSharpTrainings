@@ -27,10 +27,10 @@ namespace C
         int ln=l;
         if(l>=1 && l<=n) {
             Console.Write("\n The contents of {0} lines of {1} are:\n",l,filename);
-            if(File.Exists(filename)) {
-                for(int i=n=l;i<n;i++) {
+           if(File.Exists(filename)) {
+                for(int i=n-l;i<n;i++) {
                     String[] lines = File.ReadAllLines(filename);
-                    Console.WriteLine("The last no {0} lines of are: {1} \n",ln,lines[i]);
+                    Console.WriteLine("\nThe last no {0} line of is: {1} \n",ln,lines[i]);
                     ln--;      
                 }
             }
